@@ -3,7 +3,7 @@ import TodoItem from './TodoItem';
 
 
 const TodoList = ({todos,setTodos,setEdit}) => {
-    const completed = ({todo}) =>{
+    const completed = (todo) =>{
         const newTodos = todos.map((item)=>{
             if(item.id===todo.id){
                 return {...item,completed:!item.completed}
@@ -13,7 +13,7 @@ const TodoList = ({todos,setTodos,setEdit}) => {
         });
         setTodos(newTodos);
     };
-    
+
     const handleDelete = ({id}) =>{
         setTodos(todos.filter((todo)=>todo.id!==id));
     };
@@ -24,7 +24,7 @@ const TodoList = ({todos,setTodos,setEdit}) => {
             <TodoItem 
             key={todo.id} 
             todo={todo} 
-            handleDelete={handleDelete} 
+            deleted={handleDelete} 
             completed={completed} 
             setEdit={setEdit}
             />

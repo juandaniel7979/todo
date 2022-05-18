@@ -12,7 +12,7 @@ const Form = ({input,setInput,todos,setTodos,edit,setEdit}) => {
             updateTodo(edit.id,input,edit.completed)
 
         }else{
-            const newTodo = {id: uuidv4(),title:input,completed:false}
+            const newTodo = {id: uuidv4(),title:input,completed:false};
             setTodos([...todos,newTodo]);
             setInput("");
         }
